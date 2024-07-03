@@ -1,39 +1,41 @@
-import { write, append, setAttributes, empty } from '@matry/dom';
+import { append, setAttributes, empty, replace, setContent } from '@matry/dom';
 
 const model = {
   todos: [],
 }
 
-write('app', (
-  <div id="todo-container">
-    <h2>Your ToDos</h2>
-    <form
-      onsubmit={onFormSubmit}
-    >
-      <input
-        type="text"
-        id="todo-input"
-        name="todo-input"
-        value=""
-        placeholder="What do you want to achieve today?"
-        style="width: 250px;"
-      />
-      <button type="submit">Add</button>
-    </form>
+replace((
+  <div id="app">
+    <div id="todo-container">
+      <h2>Your ToDos</h2>
+      <form
+        onsubmit={onFormSubmit}
+      >
+        <input
+          type="text"
+          id="todo-input"
+          name="todo-input"
+          value=""
+          placeholder="What do you want to achieve today?"
+          style="width: 250px;"
+        />
+        <button type="submit">Add</button>
+      </form>
 
-    <ul id="todo-list">
-      {model.todos.map((todo) => {
-        return (
-          <li id={todo.id}>{todo.description}</li>
-        )
-      })}
-    </ul>
-    <button
-      id="clear"
-      onclick={onClearClick}
-    >
-      clear all
-    </button>
+      <ul id="todo-list">
+        {model.todos.map((todo) => {
+          return (
+            <li id={todo.id}>{todo.description}</li>
+          )
+        })}
+      </ul>
+      <button
+        id="clear"
+        onclick={onClearClick}
+      >
+        clear all
+      </button>
+    </div>
   </div>
 ));
 

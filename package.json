@@ -12,6 +12,6 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "@matry/dom": "^0.0.1"
+    "@matry/dom": "^0.0.3"
   }
 }

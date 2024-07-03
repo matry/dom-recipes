@@ -1,10 +1,9 @@
-import { write, empty, append } from "@matry/dom";
+import { replace, setContent } from "@matry/dom";
 
 let count = 0;
 
-write(
-  'app',
-  <div>
+replace(
+  <div id="app">
     <button
       id="counter"
       type="button"
@@ -18,8 +17,7 @@ write(
 function onClick() {
   count++;
 
-  empty(<button id="counter" />)
-  append(
+  setContent(
     <button id="counter">
       The count is {count}
     </button>
