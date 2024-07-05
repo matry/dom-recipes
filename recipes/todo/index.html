@@ -8,7 +8,22 @@
 
 <body>
 
-  <div id="app"></div>
+  <div id="app">
+    <div id="todo-container">
+      <h2>Your ToDos</h2>
+      <form>
+        <input type="text" id="todo-input" name="todo-input" value="" placeholder="What do you want to achieve today?"
+          style="width: 250px;" />
+        <button type="submit">Add</button>
+      </form>
+
+      <ul id="todo-list"></ul>
+
+      <button id="clear">
+        clear all
+      </button>
+    </div>
+  </div>
 
   <script type="module" src="./todo.jsx"></script>
 </body>

@@ -1,17 +1,12 @@
-import { replace, setContent } from "@matry/dom";
+import { addEventListeners, setContent } from '@matry/dom';
 
 let count = 0;
 
-replace(
-  <div id="app">
-    <button
-      id="counter"
-      type="button"
-      onclick={onClick}
-    >
-      The count is {count}
-    </button>
-  </div>
+addEventListeners(
+  <button
+    id="counter"
+    onclick={onClick}
+  />
 )
 
 function onClick() {
@@ -21,5 +16,5 @@ function onClick() {
     <button id="counter">
       The count is {count}
     </button>
-  )
+  );
 }

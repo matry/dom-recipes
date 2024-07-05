@@ -1,43 +1,17 @@
-import { append, setAttributes, empty, replace, setContent } from '@matry/dom';
+import { append, setAttributes, empty, addEventListeners } from '@matry/dom';
 
 const model = {
   todos: [],
-}
+};
 
-replace((
-  <div id="app">
-    <div id="todo-container">
-      <h2>Your ToDos</h2>
-      <form
-        onsubmit={onFormSubmit}
-      >
-        <input
-          type="text"
-          id="todo-input"
-          name="todo-input"
-          value=""
-          placeholder="What do you want to achieve today?"
-          style="width: 250px;"
-        />
-        <button type="submit">Add</button>
-      </form>
-
-      <ul id="todo-list">
-        {model.todos.map((todo) => {
-          return (
-            <li id={todo.id}>{todo.description}</li>
-          )
-        })}
-      </ul>
-      <button
-        id="clear"
-        onclick={onClearClick}
-      >
-        clear all
-      </button>
-    </div>
+addEventListeners(
+  <div id="todo-container">
+    <form
+      onsubmit={onFormSubmit}
+    />
+    <button id="clear" onclick={onClearClick} />
   </div>
-));
+)
 
 function onFormSubmit(e) {
   e.preventDefault();
